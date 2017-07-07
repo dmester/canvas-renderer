@@ -1,0 +1,26 @@
+{
+  "name": "polygon-renderer",
+  "version": "0.0.0",
+  "description": "Encodes polygons to PNG with no native dependencies.",
+  "license": "Zlib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmester/polygon-renderer"
+  },
+  "bugs": {
+    "url": "https://github.com/dmester/polygon-renderer/issues"
+  },
+  "keywords": [
+    "javascript",
+    "rasterize",
+    "rasterizer",
+    "renderer",
+    "png",
+    "polygon"
+  ],
+  "main": "index.js",
+  "author": {
+    "name": "Daniel Mester Pirttijärvi"
+  },
+  "dependencies": {}
+}
