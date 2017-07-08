@@ -76,7 +76,7 @@ by the module. Use the `getContext()` method on the canvas to get a `CanvasConte
 
 #### Methods
 
-* `asPng([keywords])`
+* `toPng([keywords])`
 
   Renders the canvas as a PNG data stream and returns it as a `Buffer`. `keywords`
   is an optional dictionary defining the keywords to be written to the PNG stream.
