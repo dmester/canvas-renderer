@@ -1,4 +1,10 @@
+
+Thumbs.db
+*.user
+*.suo
 .vs
+node_modules
+
 *.sln
 *.njsproj
 sample.js
