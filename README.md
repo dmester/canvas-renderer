@@ -1,9 +1,15 @@
 ﻿# canvas-renderer
 HTML5 inspired canvas implemented in Node.js for rendering PNG images.
-* Render simple polygons as PNG with no native dependencies like PhantomJS.
-* It does not run in the browser.
-* It is not an attempt to implement a complete vector graphics 
-  rendering library. More features probably won't be implemented.
+* Render simple polygons as PNG with no native dependencies 
+  like PhantomJS.
+* The library does not run in the browser.
+* This is not an attempt to implement the complete HTML5 
+  CanvasRenderingContext2D interface. See the supported methods
+  below.
+* The performance has not been in focus. If performance is 
+  important in your project, consider using a native backed canvas 
+  implementation.
+  
 
 ## Sample
 Install the canvas-renderer NPM package.
@@ -22,14 +28,14 @@ var canvas = canvasRenderer.createCanvas(100, 100);
 
 var ctx = canvas.getContext("2d");
 
-ctx.fillColor = 0xff0000ff;
+ctx.fillStyle = "#ff0000";
 ctx.beginPath();
 ctx.moveTo(10, 10);
 ctx.lineTo(90, 10);
 ctx.lineTo(10, 90);
 ctx.fill();
 
-ctx.fillColor = 0x0000ffff;
+ctx.fillStyle = "#0000ff";
 ctx.beginPath();
 ctx.moveTo(90, 90);
 ctx.lineTo(90, 50);
@@ -43,7 +49,7 @@ testpng.close();
 
 ## API
 To create an instance of `Canvas`, use the `createCanvas(width, height)` method that is exposed
-by the module. Use 
+by the module. Use the `getContext()` method on the canvas to get a `CanvasContext` object.
 
 ### Canvas
 
