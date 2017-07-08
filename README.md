@@ -155,4 +155,4 @@ by the module. Use the `getContext()` method on the canvas to get a `CanvasConte
 * `translate(x, y)`
 
 ## License
-Polygon-renderer is released under the [zlib license](https://github.com/dmester/polygon-renderer/blob/master/license.txt).
+canvas-renderer is released under the [zlib license](https://github.com/dmester/canvas-renderer/blob/master/license.txt).
