@@ -22,7 +22,7 @@ The following example renders two triangles to C:\test.png.
 
 ```js
 const fs = require("fs");
-const canvasRenderer = require("./canvas-renderer");
+const canvasRenderer = require("canvas-renderer");
 
 var canvas = canvasRenderer.createCanvas(100, 100);
 
