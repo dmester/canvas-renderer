@@ -1,17 +1,18 @@
 {
-  "name": "polygon-renderer",
+  "name": "canvas-renderer",
   "version": "0.0.0",
-  "description": "Encodes polygons to PNG with no native dependencies.",
+  "description": "HTML5 inspired canvas that can be rendered to PNG with no native dependencies.",
   "license": "Zlib",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dmester/polygon-renderer"
+    "url": "https://github.com/dmester/canvas-renderer"
   },
   "bugs": {
-    "url": "https://github.com/dmester/polygon-renderer/issues"
+    "url": "https://github.com/dmester/canvas-renderer/issues"
   },
   "keywords": [
     "javascript",
+    "canvas",
     "rasterize",
     "rasterizer",
     "renderer",

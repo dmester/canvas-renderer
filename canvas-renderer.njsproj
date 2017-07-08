@@ -2,7 +2,7 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>PolygonRenderer</Name>
+    <Name>canvas-renderer</Name>
     <RootNamespace>PolygonRenderer</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -10,9 +10,9 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>163643dd-baa3-4437-97d2-b79a6568c634</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
-    <StartupFile>
-    </StartupFile>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>sample.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -32,6 +32,9 @@
     <Compile Include="index.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="lib\canvasContext.js" />
+    <Compile Include="lib\canvasState.js" />
+    <Compile Include="lib\matrix.js" />
     <Compile Include="lib\canvas.js">
       <SubType>Code</SubType>
     </Compile>

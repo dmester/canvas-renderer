@@ -27,5 +27,5 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
-.vs/
-node_modules/
+.vs
+node_modules

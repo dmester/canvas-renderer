@@ -1,40 +1,39 @@
 "use strict";
 
 const fs = require("fs");
-const Canvas = require("./lib/canvas");
+const canvasRenderer = require("./index");
 
-var canvas = new Canvas(100, 100);
+var canvas = canvasRenderer.createCanvas(100, 100);
+canvas.backColor = "#00000000";
 
-canvas.fillColor = 0xff0000ff;
-canvas.beginPath();
-canvas.moveTo(10, 10);
-canvas.lineTo(90, 10);
-canvas.lineTo(10, 90);
-canvas.fill();
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "#f00";
 
-canvas.fillColor = 0x0000ffff;
-canvas.beginPath();
-canvas.moveTo(30, 10);
-canvas.lineTo(60, 10);
-canvas.lineTo(60, 90);
-canvas.lineTo(30, 90);
-canvas.fill();
+ctx.rotate(0.1);
 
-canvas.fillColor = 0x00ff00aa;
-canvas.beginPath();
-canvas.moveTo(10, 30);
-canvas.lineTo(90, 30);
-canvas.lineTo(90, 60);
-canvas.lineTo(10, 60);
-canvas.fill();
+ctx.beginPath();
+ctx.lineTo(10, 10);
+ctx.arc(50, 50, 30, -3 * Math.PI / 4, -1 * Math.PI / 4, true);
+ctx.lineTo(90, 10);
+ctx.closePath();
 
-canvas.fillColor = 0xff0000ff;
-canvas.beginPath();
-canvas.moveTo(90, 90);
-canvas.lineTo(90, 10);
-canvas.lineTo(10, 90);
-canvas.fill();
+ctx.fill();
 
-var testpng = fs.createWriteStream("C:\\output.png");
-testpng.write(canvas.asPng({ "Software": "PolygonRenderer" }));
+ctx.fillStyle = "#f00";
+ctx.fillRect(80, 80, 20, 20);
+
+ctx.translate(0, 5);
+
+ctx.lineTo(90, 90);
+ctx.lineTo(10, 90);
+ctx.lineTo(10, 30);
+
+ctx.fillStyle = "#0000ff";
+ctx.fill();
+
+ctx.clearRect(30, 30, 20, 20);
+
+var testpng = fs.createWriteStream("M:\\output1704.png");
+testpng.write(canvas.toPng({ "Software": "CanvasRenderer" }));
 testpng.close();
+
