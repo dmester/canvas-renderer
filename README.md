@@ -18,7 +18,7 @@ Install the canvas-renderer NPM package.
 npm install canvas-renderer
 ```
 
-The following example renders two triangles to C:\test.png.
+The following example renders two triangles to test.png.
 
 ```js
 const fs = require("fs");
