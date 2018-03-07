@@ -42,7 +42,7 @@ ctx.lineTo(90, 50);
 ctx.lineTo(50, 90);
 ctx.fill();
 
-var testpng = fs.createWriteStream("C:\\test.png");
+var testpng = fs.createWriteStream("test.png");
 testpng.write(canvas.toPng());
 testpng.close();
 ```

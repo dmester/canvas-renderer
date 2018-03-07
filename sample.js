@@ -7,6 +7,7 @@ var canvas = canvasRenderer.createCanvas(100, 100);
 canvas.backColor = "#00000000";
 
 var ctx = canvas.getContext("2d");
+
 ctx.fillStyle = "#f00";
 
 ctx.rotate(0.1);
@@ -33,7 +34,7 @@ ctx.fill();
 
 ctx.clearRect(30, 30, 20, 20);
 
-var testpng = fs.createWriteStream("M:\\output1704.png");
+var testpng = fs.createWriteStream("test.png");
 testpng.write(canvas.toPng({ "Software": "CanvasRenderer" }));
 testpng.close();
 
