@@ -3,6 +3,7 @@ Thumbs.db
 *.user
 *.suo
 .vs
+.git
 node_modules
 
 *.sln
