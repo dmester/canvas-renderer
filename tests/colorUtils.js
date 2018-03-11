@@ -15,6 +15,7 @@ tap.equal("#abcdef21", colorUtils.format(colorUtils.parse("#abcdef21")));
 tap.equal("#aabbccff", colorUtils.format(colorUtils.parse("#abc")));
 tap.equal("#aabbccff", colorUtils.format(colorUtils.parse("#aabbcc")));
 tap.equal("#fffefdff", colorUtils.format(colorUtils.parse("rgb(255, 254, 253)")));
+tap.equal("#ff7f00ff", colorUtils.format(colorUtils.parse("rgb(100%, 50%, 0%)")));
 tap.equal("#fffefd7f", colorUtils.format(colorUtils.parse("rgb(255, 254, 253, 0.5)")));
 tap.equal("#fffefd7f", colorUtils.format(colorUtils.parse("rgba(255, 254, 253, 0.5)")));
 tap.equal("#adcbaeff", colorUtils.format(colorUtils.parse("hsl(123, 23%, 74% )")));

@@ -65,13 +65,7 @@ by the module. Use the `getContext()` method on the canvas to get a `CanvasConte
 
 * `backColor` (color)
 
-  Specifies the background color. Allowed values are:
-
-  * 32 bit integers on the format `0xRRGGBBAA`
-  * strings on the format `"#RGB"`
-  * strings on the format `"#RRGGBB"`
-  * strings on the format `"#RRGGBBAA"`
-
+  Specifies the background color. See `fillStyle` below for allowed values. 
   Default is transparent.
 
 #### Methods
@@ -96,9 +90,30 @@ by the module. Use the `getContext()` method on the canvas to get a `CanvasConte
   Specifies the fill color that is used when the `fill()` method is called. Allowed values are:
 
   * 32 bit integers on the format `0xRRGGBBAA`
-  * strings on the format `"#RGB"`
-  * strings on the format `"#RRGGBB"`
-  * strings on the format `"#RRGGBBAA"`
+  * string `"transparent"`
+  * strings on the format `"#2c4"` (#RGB)
+  * strings on the format `"#2c4f"` (#RGBA)
+  * strings on the format `"#22cc44"` (#RRGGBB)
+  * strings on the format `"#22cc44ff"` (#RRGGBBAA)
+  * strings on the format `"rgb(255, 124, 22)"`
+  * strings on the format `"rgb(255, 124, 22, 0.5)"`
+  * strings on the format `"rgb(255, 124, 22, 50%)"`
+  * strings on the format `"rgba(255, 124, 22, 0.5)"`
+  * strings on the format `"rgba(255, 124, 22, 50%)"`
+  * strings on the format `"rgb(23%, 45%, 75%)"`
+  * strings on the format `"rgb(23%, 45%, 75%, 0.5)"`
+  * strings on the format `"rgb(23%, 45%, 75%, 50%)"`
+  * strings on the format `"rgba(23%, 45%, 75%, 0.5)"`
+  * strings on the format `"rgba(23%, 45%, 75%, 50%)"`
+  * strings on the format `"hsl(134, 50%, 50%)"`
+  * strings on the format `"hsl(134, 50%, 50%, 0.5)"`
+  * strings on the format `"hsl(134, 50%, 50%, 50%)"`
+  * strings on the format `"hsla(134, 50%, 50%, 0.5)"`
+  * strings on the format `"hsla(134, 50%, 50%, 50%)"`
+  * strings on the format `"hwb(134, 50%, 50%)"`
+  * strings on the format `"hwb(134, 50%, 50%, 0.5)"`
+  * strings on the format `"hwb(134, 50%, 50%, 50%)"`
+  * named colors listed in [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/#named-colors)
   
 #### Paths
 
