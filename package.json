@@ -2,7 +2,7 @@
   "name": "canvas-renderer",
   "version": "1.0.1",
   "description": "HTML5 inspired canvas that can be rendered to PNG with no native dependencies.",
-  "license": "Zlib",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/dmester/canvas-renderer"
