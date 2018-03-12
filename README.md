@@ -170,4 +170,4 @@ by the module. Use the `getContext()` method on the canvas to get a `CanvasConte
 * `translate(x, y)`
 
 ## License
-canvas-renderer is released under the [MIT license](https://github.com/dmester/canvas-renderer/blob/master/LICENSE.txt).
+canvas-renderer is released under the [MIT license](https://github.com/dmester/canvas-renderer/blob/master/LICENSE).
