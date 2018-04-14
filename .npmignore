@@ -5,6 +5,7 @@ Thumbs.db
 .vs
 .git
 node_modules
+tests
 
 *.sln
 *.njsproj
