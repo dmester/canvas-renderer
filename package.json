@@ -1,6 +1,6 @@
 {
   "name": "canvas-renderer",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "HTML5 inspired canvas that can be rendered to PNG with no native dependencies.",
   "license": "MIT",
   "repository": {
