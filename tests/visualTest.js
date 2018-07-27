@@ -26,18 +26,25 @@
  
 "use strict";
 
+
 /**
  * This script generates a png out of a set of polygons that
  * are constructed to cover as many possibilities as possible.
- * 
- * So far the output is not checked automatically. Compare the 
- * output manually with expected.svg.
  */
 
 const fs = require("fs");
+const tap = require("tap");
 const canvasRenderer = require("../index");
 
-var canvas = canvasRenderer.createCanvas(100, 100);
+
+var canvas;
+
+canvas = canvasRenderer.createCanvas(0, 100);
+tap.equal("data:,", canvas.toDataURL());
+canvas = canvasRenderer.createCanvas(100, 0);
+tap.equal("data:,", canvas.toDataURL());
+
+canvas = canvasRenderer.createCanvas(100, 100);
 canvas.backColor = "#00000000";
 
 var ctx = canvas.getContext("2d");
@@ -165,7 +172,7 @@ ctx.lineTo(5, 95);
 ctx.closePath();
 ctx.fill();
 
-var testpng = fs.createWriteStream("actual.png");
-testpng.write(canvas.toPng({ "Software": "CanvasRenderer" }));
-testpng.close();
+var expected = fs.readFileSync(__dirname + "/expected.png");
+var expectedB64 = Buffer.from(expected).toString("base64");
+tap.equal("data:image/png;base64," + expectedB64, canvas.toDataURL());
 
