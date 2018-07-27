@@ -82,6 +82,11 @@ by the module. Use the `getContext()` method on the canvas to get a `CanvasConte
 * `getContext()`
 
   Gets a CanvasContext object for drawing on this canvas.
+  
+* `toDataURL([type], [encoderOptions])`
+
+  Renders the canvas as a dataURI. Note that the two parameters are currently
+  ignored since the only supported `type` is `image/png`.
 
 
 ### CanvasContext
