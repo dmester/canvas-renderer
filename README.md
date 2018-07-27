@@ -1,4 +1,7 @@
 ﻿# canvas-renderer
+
+[![Build Status](https://travis-ci.org/dmester/canvas-renderer.svg?branch=master)](https://travis-ci.org/dmester/canvas-renderer)
+
 HTML5 inspired canvas implemented in Node.js for rendering PNG images.
 * Render simple polygons as PNG with no native dependencies 
   like PhantomJS.
