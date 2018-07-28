@@ -1,6 +1,8 @@
-﻿# canvas-renderer
+# canvas-renderer
 
 [![Build Status](https://travis-ci.org/dmester/canvas-renderer.svg?branch=master)](https://travis-ci.org/dmester/canvas-renderer)
+[![Downloads](https://img.shields.io/npm/dt/canvas-renderer.svg)](https://www.npmjs.com/package/canvas-renderer)
+[![License MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/dmester/canvas-renderer/blob/master/LICENSE)
 
 HTML5 inspired canvas implemented in Node.js for rendering PNG images.
 * Render simple polygons as PNG with no native dependencies 
