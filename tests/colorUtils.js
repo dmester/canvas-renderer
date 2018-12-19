@@ -4,34 +4,55 @@ var tap = require("tap");
 var colorUtils = require("../lib/colorUtils");
 
 tap.equal(255, colorUtils.red(0xff000000));
+tap.equal(255, colorUtils.red(0xff000000 & 0xffffffff)); // converted to 32-bit signed int
 tap.equal(255, colorUtils.green(0x00ff0000));
 tap.equal(255, colorUtils.blue(0x0000ff00));
 tap.equal(255, colorUtils.alpha(0x000000ff));
 
-tap.equal("#00000000", colorUtils.format(colorUtils.parse("transparent")));
-tap.equal("#66cdaaff", colorUtils.format(colorUtils.parse("mediumaquaMarine")));
-tap.equal("#aabbccdd", colorUtils.format(colorUtils.parse("#abcd")));
-tap.equal("#abcdef21", colorUtils.format(colorUtils.parse("#abcdef21")));
-tap.equal("#aabbccff", colorUtils.format(colorUtils.parse("#abc")));
-tap.equal("#aabbccff", colorUtils.format(colorUtils.parse("#aabbcc")));
-tap.equal("#fffefdff", colorUtils.format(colorUtils.parse("rgb(255, 254, 253)")));
-tap.equal("#ff7f00ff", colorUtils.format(colorUtils.parse("rgb(100%, 50%, 0%)")));
-tap.equal("#fffefd7f", colorUtils.format(colorUtils.parse("rgb(255, 254, 253, 0.5)")));
-tap.equal("#fffefd7f", colorUtils.format(colorUtils.parse("rgba(255, 254, 253, 0.5)")));
-tap.equal("#adcbaeff", colorUtils.format(colorUtils.parse("hsl(123, 23%, 74% )")));
-tap.equal("#adcbaeff", colorUtils.format(colorUtils.parse("hsl(123deg, 23%, 74% )")));
-tap.equal("#adcbaeff", colorUtils.format(colorUtils.parse("hsl(123.000001deg, 23%, 74% )")));
-tap.equal("#adcbae7f", colorUtils.format(colorUtils.parse("hsl(123.000001deg, 23%, 74% , 0.5)")));
-tap.equal("#adcbae7f", colorUtils.format(colorUtils.parse("hsla(123.000001deg, 23%, 74% , 0.5)")));
-tap.equal("#bcbcbcff", colorUtils.format(colorUtils.parse("hsl(123, 0%, 74% )")));
-tap.equal("#000000ff", colorUtils.format(colorUtils.parse("hsl(123deg, 23%, 0% )")));
-tap.equal("#ffffffff", colorUtils.format(colorUtils.parse("hsl(123.000001deg, 23%, 100% )")));
-tap.equal("#adcbaeff", colorUtils.format(colorUtils.parse("hsl(2.146755rad, 23%, 74% )")));
-tap.equal("#adcbaeff", colorUtils.format(colorUtils.parse("hsl(0.3416667turn, 23%, 74% )")));
-tap.equal("#adcbaeff", colorUtils.format(colorUtils.parse("hsl(136.66667grad, 23%, 74% )")));
-tap.equal("#00bfffff", colorUtils.format(colorUtils.parse("hwb(195, 0%, 0%)")));
-tap.equal("#00bfffb2", colorUtils.format(colorUtils.parse("hwb(195, 0%, 0%, 0.7)")));
-tap.equal("#bfbfe5b2", colorUtils.format(colorUtils.parse("hwb(239.0000deg, 75%, 10%, 0.7)")));
-tap.equal("#9c9c9cff", colorUtils.format(colorUtils.parse("hwb(5, 91%, 57%)")));
-tap.equal("#000000ff", colorUtils.format(colorUtils.parse("hwb(5, 0%, 100%)")));
-tap.equal("#ffffffff", colorUtils.format(colorUtils.parse("hwb(5, 100%, 0%)")));
+function assertParsed(expected, value) {
+    const SIGNED_MAX_VALUE = 2147483647;
+    const SIGNED_MIN_VALUE = -2147483648;
+
+    var actual = colorUtils.parse(value);
+    var actualFormatted = colorUtils.format(actual);
+
+    tap.assert(
+        actual >= SIGNED_MIN_VALUE &&
+        actual <= SIGNED_MAX_VALUE, 
+        `${value} was parsed as ${actual}, which is not a 32-bit signed integer.`);
+    
+    tap.equal(
+        expected, actualFormatted, 
+        `${value} was parsed as ${actualFormatted} instead of ${expected}.`);
+}
+
+assertParsed("#fedcbaef", 0xfedcbaef);
+assertParsed("#00000000", 0);
+assertParsed("#00000000", "transparent");
+assertParsed("#66cdaaff", "mediumaquaMarine");
+assertParsed("#e0ffffff", "lightcyan");
+assertParsed("#aabbccdd", "#abcd");
+assertParsed("#abcdef21", "#abcdef21");
+assertParsed("#aabbccff", "#abc");
+assertParsed("#aabbccff", "#aabbcc");
+assertParsed("#fffefdff", "rgb(255, 254, 253)");
+assertParsed("#ff7f00ff", "rgb(100%, 50%, 0%)");
+assertParsed("#fffefd7f", "rgb(255, 254, 253, 0.5)");
+assertParsed("#fffefd7f", "rgba(255, 254, 253, 0.5)");
+assertParsed("#adcbaeff", "hsl(123, 23%, 74% )");
+assertParsed("#adcbaeff", "hsl(123deg, 23%, 74% )");
+assertParsed("#adcbaeff", "hsl(123.000001deg, 23%, 74% )");
+assertParsed("#adcbae7f", "hsl(123.000001deg, 23%, 74% , 0.5)");
+assertParsed("#adcbae7f", "hsla(123.000001deg, 23%, 74% , 0.5)");
+assertParsed("#bcbcbcff", "hsl(123, 0%, 74% )");
+assertParsed("#000000ff", "hsl(123deg, 23%, 0% )");
+assertParsed("#ffffffff", "hsl(123.000001deg, 23%, 100% )");
+assertParsed("#adcbaeff", "hsl(2.146755rad, 23%, 74% )");
+assertParsed("#adcbaeff", "hsl(0.3416667turn, 23%, 74% )");
+assertParsed("#adcbaeff", "hsl(136.66667grad, 23%, 74% )");
+assertParsed("#00bfffff", "hwb(195, 0%, 0%)");
+assertParsed("#00bfffb2", "hwb(195, 0%, 0%, 0.7)");
+assertParsed("#bfbfe5b2", "hwb(239.0000deg, 75%, 10%, 0.7)");
+assertParsed("#9c9c9cff", "hwb(5, 91%, 57%)");
+assertParsed("#000000ff", "hwb(5, 0%, 100%)");
+assertParsed("#ffffffff", "hwb(5, 100%, 0%)");
