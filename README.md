@@ -164,6 +164,17 @@ by the module. Use the `getContext()` method on the canvas to get a `CanvasConte
 
   Fills the specified rectangle without affecting the current paths.
 
+#### Operations
+
+* `save()`
+
+  Saves the current transformation and fill style to a stack. The state can be
+  restored using `restore()`.
+
+* `restore()`
+
+  Restores the last state saved by `save()` and removes the state from the 
+  state stack.
 
 #### Transformation
 
