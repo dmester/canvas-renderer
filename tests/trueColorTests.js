@@ -40,6 +40,7 @@
 const fs = require("fs");
 const tap = require("tap");
 const canvasRenderer = require("../index");
+require("./pngAssert")(tap);
 
 var canvas = canvasRenderer.createCanvas(1000, 1000);
 canvas.backColor = "#abcdefff";
@@ -62,6 +63,5 @@ ctx.arc(400 + radius, 250 + radius, radius, 0, Math.PI * 2, false); // last argu
 ctx.closePath();
 ctx.fill();
 
-var expected = fs.readFileSync(__dirname + "/expected-truecolor.png");
-var expectedB64 = Buffer.from(expected).toString("base64");
-tap.equal("data:image/png;base64," + expectedB64, canvas.toDataURL());
+var wanted = fs.readFileSync(__dirname + "/expected-truecolor.png");
+tap.equalPng(canvas.toPng(), wanted);
