@@ -35,6 +35,7 @@
 const fs = require("fs");
 const tap = require("tap");
 const canvasRenderer = require("../index");
+require("./pngAssert")(tap);
 
 
 var canvas;
@@ -172,7 +173,5 @@ ctx.lineTo(5, 95);
 ctx.closePath();
 ctx.fill();
 
-var expected = fs.readFileSync(__dirname + "/expected.png");
-var expectedB64 = Buffer.from(expected).toString("base64");
-tap.equal("data:image/png;base64," + expectedB64, canvas.toDataURL());
-
+var wanted = fs.readFileSync(__dirname + "/expected.png");
+tap.equalPng(canvas.toPng(), wanted);
