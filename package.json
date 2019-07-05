@@ -8,8 +8,9 @@
     "url": "https://github.com/dmester/canvas-renderer"
   },
   "devDependencies": {
-    "tap": "^12.1.1",
-    "pngjs": "^3.3.3"
+    "@types/node": "^12.0.12",
+    "pngjs": "^3.3.3",
+    "tap": "^12.1.1"
   },
   "scripts": {
     "test": "tap tests/*Tests.js"
