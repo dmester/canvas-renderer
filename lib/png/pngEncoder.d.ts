@@ -20,8 +20,8 @@ declare class PngEncoder {
     width: number,
     height: number
   ): void;
-  writePalette(palette: any): void;
-  writeTransparency(palette: any): void;
+  writePalette(palette: Palette): void;
+  writeTransparency(palette: Palette): void;
   writeTextualData(key: string, value: string): void;
   writeImageEnd(): void;
   getBuffer(): Buffer;

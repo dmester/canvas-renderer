@@ -4,11 +4,11 @@ import CanvasContext from "./canvasContext";
 declare namespace canvasState {
   const capture: (
     ctx: CanvasContext
-  ) => { fillStyle: number; transform: Matrix };
-  
+  ) => { fillStyle: number | string; transform: Matrix };
+
   const restore: (
     ctx: CanvasContext,
-    state: { fillStyle: number; transform: Matrix }
+    state: { fillStyle: number | string; transform: Matrix }
   ) => {};
 }
 

@@ -1,7 +1,9 @@
+import Canvas from "../canvas";
+
 declare class BitmapWriter {
-  constructor(backColor: number | string, width: number, height: number);
-  canvas: [];
-  write(color: number | string, count: number): void;
+  constructor(backColor: number, width: number, height: number);
+  canvas: Array<Canvas>;
+  write(color: number, count: number): void;
   skip(count: number): void;
 }
 

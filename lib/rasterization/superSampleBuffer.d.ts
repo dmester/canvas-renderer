@@ -4,6 +4,6 @@ declare class SuperSampleBuffer {
   rewind(): void;
   clear(): void;
   writeTo(bitmapWriter: BitmapWriter, count: number): void;
-  getColorAt(index: number): number | string;
-  add(color: number | string, untilX: number): void;
+  getColorAt(index: number): number;
+  add(color: number, untilX: number): void;
 }

@@ -1,8 +1,9 @@
 declare class Matrix {
+  constructor(a: number, b: number, c: number, d: number, e: number, f: number);
+
   hasSkewing(): boolean;
   hasTranslation(): boolean;
   hasScaling(): boolean;
-
   multiply(
     a: number,
     b: number,

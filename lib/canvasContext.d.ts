@@ -3,7 +3,7 @@ import Canvas from "./canvas";
 declare class CanvasContext {
   constructor(canvas: Canvas);
   canvas: Canvas;
-  fillStyle: number;
+  fillStyle: number | string;
   save(): void;
   restore(): void;
   resetTransform(): void;

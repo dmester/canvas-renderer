@@ -1,6 +1,6 @@
 import Edge from "./edge";
 declare class LayerManager {
-  color: number | string;
+  color: number;
   clear(): void;
   copyTo(other: LayerManager): void;
   add(edge: Edge): void;
