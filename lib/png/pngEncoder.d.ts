@@ -1,3 +1,5 @@
+import Palette from "./pngPalette";
+
 declare class PngEncoder {
   static GRAYSCALE: number;
   static TRUE_COLOR: number;
@@ -14,7 +16,7 @@ declare class PngEncoder {
   ): void;
   writeIndexed(
     colorRanges: Array<number>,
-    palette: any, // @TODO
+    palette: Palette,
     width: number,
     height: number
   ): void;

@@ -8,3 +8,5 @@ declare class Edge {
   windingRule: string;
   intersection: (y: number) => number;
 }
+
+export = Edge;
