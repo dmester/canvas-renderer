@@ -1,6 +1,6 @@
-import Canvas from "./canvas";
+import { Canvas } from "./canvas";
 
-declare interface CanvasContext {
+export interface CanvasContext {
     readonly canvas: Canvas;
     fillStyle: number | string;
     save(): void;
@@ -41,5 +41,3 @@ declare interface CanvasContext {
     fillRect(x: number, y: number, width: number, height: number): void;
     fill(windingRule?: "nonzero" | "evenodd"): void;
 }
-
-export = CanvasContext;

@@ -1,6 +1,6 @@
-import Canvas from "./lib/canvas";
-declare module index {
-    const createCanvas: (width: number, height: number) => Canvas;
-}
+import { Canvas } from "./canvas";
 
-export = index;
+export { Canvas } from "./canvas";
+export { CanvasContext } from "./canvasContext";
+
+export function createCanvas(width: number, height: number): Canvas;

@@ -1,6 +1,6 @@
-import CanvasContext from "./canvasContext";
+import { CanvasContext } from "./canvasContext";
 
-declare interface Canvas {
+export interface Canvas {
     width: number;
     height: number;
     backColor: number | string;
@@ -8,5 +8,3 @@ declare interface Canvas {
     toPng(keywords?: { [key: string]: string }): Buffer;
     toDataURL(type?: string, encoderOptions?: any): string;
 }
-
-export = Canvas;
