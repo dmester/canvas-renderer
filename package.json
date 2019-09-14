@@ -12,10 +12,13 @@
   },
   "devDependencies": {
     "pngjs": "^3.3.3",
-    "tap": "^12.1.1"
+    "tap": "^12.1.1",
+    "typescript": "^3.6.3"
   },
   "scripts": {
-    "test": "tap tests/*Tests.js"
+    "test": "npm run test:unit && npm run test:types",
+    "test:unit": "tap tests/*Tests.js",
+    "test:types": "tsc -p ./tests/types/tsconfig.json"
   },
   "bugs": {
     "url": "https://github.com/dmester/canvas-renderer/issues"
