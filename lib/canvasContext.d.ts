@@ -1,8 +1,7 @@
 import Canvas from "./canvas";
 
-declare class CanvasContext {
-    constructor(canvas: Canvas);
-    canvas: Canvas;
+declare interface CanvasContext {
+    readonly canvas: Canvas;
     fillStyle: number | string;
     save(): void;
     restore(): void;
@@ -36,11 +35,11 @@ declare class CanvasContext {
         radius: number,
         startAngle: number,
         endAngle: number,
-        anticlockwise: boolean
+        anticlockwise?: boolean
     ): void;
     clearRect(x: number, y: number, width: number, height: number): void;
     fillRect(x: number, y: number, width: number, height: number): void;
-    fill(windingRule: string): void;
+    fill(windingRule?: "nonzero" | "evenodd"): void;
 }
 
 export = CanvasContext;

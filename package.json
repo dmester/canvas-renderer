@@ -7,8 +7,10 @@
     "type": "git",
     "url": "https://github.com/dmester/canvas-renderer"
   },
+  "dependencies": {
+    "@types/node": "*"
+  },
   "devDependencies": {
-    "@types/node": "^12.0.12",
     "pngjs": "^3.3.3",
     "tap": "^12.1.1"
   },
@@ -31,6 +33,5 @@
   "types": "index.d.ts",
   "author": {
     "name": "Daniel Mester Pirttijärvi"
-  },
-  "dependencies": {}
+  }
 }

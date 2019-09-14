@@ -1,13 +1,12 @@
 import CanvasContext from "./canvasContext";
 
-declare class Canvas {
-    constructor(width: number, height: number);
+declare interface Canvas {
     width: number;
-    heigth: number;
+    height: number;
     backColor: number | string;
-    getContext(): CanvasContext;
-    toPng(keywords: object): void;
-    toDataURL(): string;
+    getContext(contextId?: string, contextAttributes?: {}): CanvasContext;
+    toPng(keywords?: { [key: string]: string }): Buffer;
+    toDataURL(type?: string, encoderOptions?: any): string;
 }
 
 export = Canvas;
