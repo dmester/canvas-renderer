@@ -30,7 +30,7 @@
     "polygon"
   ],
   "main": "index.js",
-  "types": "index.d.ts",
+  "types": "./types/index.d.ts",
   "author": {
     "name": "Daniel Mester Pirttijärvi"
   }
