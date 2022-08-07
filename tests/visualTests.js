@@ -173,5 +173,8 @@ ctx.lineTo(5, 95);
 ctx.closePath();
 ctx.fill();
 
+ctx.fillStyle = "#0f0";
+ctx.fillRect(34, 10, 30, 7);
+
 var wanted = fs.readFileSync(__dirname + "/expected.png");
 tap.equalPng(canvas.toPng(), wanted);

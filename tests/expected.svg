@@ -10,6 +10,7 @@
 <path fill="#000000" fill-opacity="1" d="M15 5L25 5L15 25L5 25Z"/>
 <path fill="#FFFFFF" fill-opacity="1" d="M5 75L15 75L25 95L15 95Z"/>
 <path fill="#FFFFFF" fill-opacity="1" d="M15 75L25 75L15 95L5 95Z"/>
+<rect fill="#00FF00" x="34" y="10" width="30" height="7"/>
 </svg>
 
 
